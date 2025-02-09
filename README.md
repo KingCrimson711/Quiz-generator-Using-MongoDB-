@@ -80,7 +80,7 @@ Each MCQ document follows this structure:
 
 ```json
 {
-    "_id": ObjectId("67a2048663ddccb722170a53"),
+    "_id": ObjectId("507f1f77bcf86cd799439011"),
     "question": "Who is considered an innovative entrepreneur?",
     "options": ["Option 1", "Option 2", "Option 3", "Option 4"],
     "answer": "Someone who introduces new products or methods",
@@ -96,7 +96,7 @@ Each Subjective question document follows this structure:
 
 ```json
 {
-    "_id": ObjectId("67a4c1712be28e29df67a707"),
+    "_id": ObjectId("507f1f77bcf86cd799439012"),
     "marks": 2,
     "question": "Define entrepreneurship in your own words."
 }

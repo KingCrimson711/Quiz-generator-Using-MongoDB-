@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function updateTotalMarks() {
+            let mcqMarks = parseInt(document.getElementById('mcq_marks').value) || 0;
+            let marks_2 = parseInt(document.getElementById('marks_2').value) || 0;
+            let marks_3 = parseInt(document.getElementById('marks_3').value) || 0;
+            let marks_5 = parseInt(document.getElementById('marks_5').value) || 0;
+
+            let totalMarks = mcqMarks + (marks_2 * 2) + (marks_3 * 3) + (marks_5 * 5);
+            document.getElementById('total_marks_display').innerText = "Total Marks: " + totalMarks;
+        }
+    </script>
+</head>
+<body>
+    <h1>Quiz Generator</h1>
+    <form method="POST">
+        <label for="mcq_marks">MCQ Marks:</label>
+        <input type="number" id="mcq_marks" name="mcq_marks" oninput="updateTotalMarks()" required><br>
+
+        <h3>Subjective Questions:</h3>
+        <label for="marks_2">Number of 2-Mark Questions:</label>
+        <input type="number" id="marks_2" name="marks_2" oninput="updateTotalMarks()" required><br>
+
+        <label for="marks_3">Number of 3-Mark Questions:</label>
+        <input type="number" id="marks_3" name="marks_3" oninput="updateTotalMarks()" required><br>
+
+        <label for="marks_5">Number of 5-Mark Questions:</label>
+        <input type="number" id="marks_5" name="marks_5" oninput="updateTotalMarks()" required><br>
+
+        <h2 id="total_marks_display">Total Marks: 0</h2>
+
+        <button type="submit">Generate Quiz</button>
+    </form>
+</body>
+</html>
